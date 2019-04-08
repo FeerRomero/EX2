@@ -7,8 +7,6 @@ const metGetId = function(term, callback) {
 	request({url, json: true}, function(error, response) {
 	if (error) {
 		callback('Service unavailable', undefined)
-	} else if (response.body.Response == 'False') {
-		callback(response.body.Error, undefined)
 	} else if (response.body.total == 0) {
 		callback("No se encontraron resultados con la búsqueda realizada.", undefined)	   	
 	}
